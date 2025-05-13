@@ -14,13 +14,14 @@ def employees():
 
 def test_generate_department_payout_report(employees):
     report = generate_department_payout_report(employees)
-    assert "Отчет по зарплате:" in report
+    assert "Отчет по зарплате департаментов:" in report
     assert "IT: 14000.00" in report
     assert "HR: 10200.00" in report
 
 
 def test_generate_payout_report(employees):
     report = generate_payout_report(employees)
+    assert "Отчет по зарплате для каждого сотрудника" in report
 
     # Проверка на правильную структуру
     assert "Name" in report
